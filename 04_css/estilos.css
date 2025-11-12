@@ -1,0 +1,85 @@
+/*{ border:1px solid red}*/
+:root{
+    --color-primario: hsl(240, 100%, 60%);
+    --color-neutro-gris: hsl(240, 100%, 97%);
+    --dimension-redondeado : 10px;
+    --padding: 10px;
+    --margin: 20px;
+    --fuente-familia: Arial;
+    --fuente-l: 16px;
+    --fuente-xxl: 20px;
+}
+body{
+    margin: 0px auto;
+    font-family: var(--fuente-familia);
+    font-size: var(--fuente-l);
+    background: var(--color-neutro-oscuro);
+}
+#logo img{width: 70px; height: 70px;}
+#logo h1{display: inline; font-size: var(--fuente-xxl);}
+header{ background: var(--color-neutro-gris); display:flex; justify-content:space-between;}
+header .avatar{ width: 50px; height: 50px; 
+    border-radius:50%; 
+    background-image: url("imagenes/batman.jpg");
+    background-position: center;
+    background-size: cover;
+    border: 2px solid #FFFF00;
+}
+
+/* BARRA */
+nav{
+    font-size: var(--fuente-l);
+}
+nav ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    background: var(--color-primario);
+}
+nav ul li a{
+    color: white;
+    text-decoration: none;
+}
+nav ul li a:hover{ color:#FFFF00}
+nav ul li{ padding: 10px 15px}
+nav ul li:hover{ background: #138daa; }
+
+/* CARD SPUERHEROE */
+section h1{  padding: var(--padding) 0px}
+.card-container{ display:flex; justify-content: space-around;}
+
+.text-center{ text-align:center}
+
+.card{
+    border: 1px dashed black;
+ 
+    border-radius: 0px 0px var(--dimension-redondeado) var(--dimension-redondeado);
+}
+.card .imagen-superheroe{ width:250px; height: 250px;}
+.card .imagen-superheroe img{ width:auto; height: 100%;}
+.card h1{ color: var(--color-primario)}
+.card .precio .precio-anterior{ 
+    color:red;
+    text-decoration: line-through;
+}
+
+.card .precio .precio-actual{
+    color: var(--color-primario);
+    font-size: var(--fuente-xxl);
+}
+
+.card .add-button{
+    background: var(--color-primario);
+    padding: var(--padding);
+    border-radius: var(--dimension-redondeado);
+    margin: var(--margin);
+}
+.card .add-button:hover { 
+    background: #FF0000;
+    cursor: pointer;
+}
+.card .add-button a{
+    color: #FFFF00;
+    text-decoration: none;
+}
+
