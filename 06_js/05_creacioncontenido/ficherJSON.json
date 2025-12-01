@@ -1,0 +1,13 @@
+{
+    "list": [
+        {
+            "item": "Gestión de auditoria",
+            "Nombre": "Carlos",
+            "estudios": [
+                {}
+            ]
+        },
+        {"item":"Gestión de menus"},
+        {"item":"Gestion de pedidos"}
+    ]
+}

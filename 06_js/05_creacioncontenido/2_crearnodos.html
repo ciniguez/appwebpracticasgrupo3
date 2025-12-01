@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Objetivo: Crear Nodos de manera dinámica (en memoria..DOM) </h1>
+    
+    <div id="contenedor">
+        <!-- p id="miparrafo">Esta es una creación dinamica</p-->
+    </div>
+
+    <button onclick="creacionDinamica()">Inyectar código</button>
+    <button onclick="eliminar()">Remover código</button>
+
+    <script>
+        function creacionDinamica(){
+            var div = document.getElementById("contenedor");
+            var parrafo = document.createElement("p");
+            parrafo.setAttribute("id", "miparrafo");
+
+            var texto =  document.createTextNode("Esta es una creación dinámica");
+
+            parrafo.appendChild(texto);
+
+            div.appendChild(parrafo);
+
+
+        }
+        function eliminar(){
+            var div = document.getElementById("contenedor");
+            div.removeChild( document.getElementById("miparrafo"));
+        }
+    </script>
+
+</body>
+</html>
