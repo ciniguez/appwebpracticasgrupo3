@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manejadores</title>
+
+    <script>
+
+        function mostrarMensaje() {
+            console.log("Hola, me hicieron click!");
+        }
+
+        function mostrarMensajePupi( elementoHTML ){
+            console.log("Hola, me hicieron click! " + elementoHTML.textContent );
+        }
+
+        function inicializar() {
+            // 2.- FORMA 2: Como propiedad del elemento
+            var elemento1 = document.getElementsByTagName('p')[1];
+            //elemento1.onclick = mostrarMensaje;
+
+            // 3.- FORMA 3: Usando AddEventListener
+            var elemento2 = document.getElementsByTagName('p')[2];
+            //elemento2.addEventListener('click', mostrarMensaje);
+
+            // 4.- Mostrando contenido
+            document.getElementsByTagName('p')[1].onclick = function(){ 
+                    mostrarMensajePupi( this );
+            }
+            document.getElementsByTagName('p')[2].addEventListener('click', function(){
+                mostrarMensajePupi( this );
+            });
+
+            
+
+
+        }
+
+        window.onload = inicializar;
+
+
+    </script>
+
+</head>
+
+<body>
+    <h1>Forma 1: Manejadores en Línea</h1>
+    <p onclick="alert('Hola');">Hacer click</p>
+
+    <h1>Forma 2: Manejador como propiedad</h1>
+    <p>Hacer click (FORMA 2)</p>
+
+    <h1>Forma 3: addEventListener</h1>
+    <p>Hacer click (FORMA 3)</p>
+
+
+</body>
+
+</html>

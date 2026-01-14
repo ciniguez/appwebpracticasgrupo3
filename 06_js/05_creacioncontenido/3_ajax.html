@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="datos"></div>
+
+    <button onclick="obtenerDatos()">Obtener Datos</button>
+    <script>
+
+        function obtenerDatos(){
+            var htr = new XMLHttpRequest();
+            htr.open("GET","ficherJSON.json", true);
+            htr.responseType ="json";
+
+            htr.onreadystatechange= function(){
+                if(this.readyState == 4 && this.status==200){
+                    console.log(this.response);
+
+                    var elementoUL = document.createElement("ul");
+
+                    this.response.list.forEach(element => {
+                        var elementLI = document.createElement("li");
+                        var texto = document.createTextNode(element.item);
+
+                        elementLI.appendChild(texto);
+                        elementoUL.appendChild(elementLI);
+                    });
+
+                    document.getElementById("datos").appendChild(elementoUL);
+                }
+            }
+
+            htr.send();
+        }
+    </script>
+</body>
+</html>

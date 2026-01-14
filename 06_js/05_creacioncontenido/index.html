@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body><h1>Hola este es un titulo</h1>
+    <!-- Este es un comentario -->
+    <div>
+        <p>Este es un <span class="notorio">párrafo</span></p>
+    </div>
+
+    <script>
+        function recursividad(nodo) {
+            var arrayNodos = nodo.childNodes;
+            arrayNodos.forEach(elemento => {
+                console.log("***************");
+                console.log("El nodo " + elemento.nodeName +
+                    " es de tipo :" + elemento.nodeType + "y su valor es : " + elemento.nodeValue);
+                console.log("Nodo Padre: " + elemento.parentNode);
+            });
+
+        }
+
+        recursividad(document.body);
+
+   
+    </script>
+</body>
+
+</html>
